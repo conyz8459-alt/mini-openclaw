@@ -26,11 +26,11 @@ else
 fi
 
 # ---------- 2. 后端：安装依赖 ----------
-echo "[2/5] 安装后端依赖（首次较慢，请耐心等待）..."
+echo "[2/5] 安装后端依赖（使用国内镜像源加速，首次较慢，请耐心等待）..."
 # shellcheck disable=SC1091
 source backend/.venv/bin/activate
-python -m pip install -q --upgrade pip
-python -m pip install -q -r backend/requirements.txt
+python -m pip install -q --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+python -m pip install -q -r backend/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # ---------- 3. 检查 .env ----------
 if [ ! -f "backend/.env" ]; then
