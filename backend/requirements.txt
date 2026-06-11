@@ -1,0 +1,27 @@
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+sse-starlette>=2.1.0
+python-dotenv>=1.0.0
+python-multipart>=0.0.9
+pydantic>=2.0.0
+
+# LangChain 1.x (create_agent API, LangGraph runtime)
+langchain>=1.0.0
+langchain-core>=1.0.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langchain-experimental>=0.3.0
+
+# fetch_url cleaning
+beautifulsoup4>=4.12.0
+html2text>=2024.2.26
+requests>=2.31.0
+
+# RAG (LlamaIndex Hybrid Search: BM25 + Vector)
+llama-index-core>=0.11.0
+llama-index-retrievers-bm25>=0.3.0
+llama-index-embeddings-openai>=0.2.0
+llama-index-readers-file>=0.2.0
+# 说明：embedding 走 OpenAI 兼容端点（默认硅基流动 bge-m3），无需 torch。
+# 若改用本地模型，可换装 llama-index-embeddings-huggingface（体积较大）。

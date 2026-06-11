@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #fafafa;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--canvas);
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 毛玻璃面板 */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* 细滚动条 */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 打字光标闪烁 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: "▋";
+  animation: blink 1s step-end infinite;
+  color: #002fa7;
+  margin-left: 1px;
+}
+
+/* Markdown 排版微调 */
+.md-body p { margin: 0.4rem 0; line-height: 1.7; }
+.md-body ul, .md-body ol { margin: 0.4rem 0; padding-left: 1.4rem; }
+.md-body ul { list-style: disc; }
+.md-body ol { list-style: decimal; }
+.md-body code {
+  background: rgba(0, 47, 167, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.md-body pre {
+  background: #1e1e2e;
+  color: #e4e4e7;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.6rem 0;
+}
+.md-body pre code { background: transparent; padding: 0; }
+.md-body table { border-collapse: collapse; margin: 0.6rem 0; width: 100%; }
+.md-body th, .md-body td { border: 1px solid #e5e5e5; padding: 0.4rem 0.7rem; text-align: left; }
+.md-body th { background: #f5f5f7; }
+.md-body h1, .md-body h2, .md-body h3 { font-weight: 600; margin: 0.6rem 0 0.3rem; }
+.md-body a { color: #002fa7; text-decoration: underline; }

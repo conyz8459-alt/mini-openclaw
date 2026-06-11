@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Env / secrets
+.env
+
+# Local runtime data
+backend/sessions/*.json
+backend/memory/logs/*
+backend/storage/*
+backend/workspace/SKILLS_SNAPSHOT.md
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code 本地工作目录（记忆/会话笔记，不交付）
+.claude/
+
+# 过程文档 & 草稿（仅本地保留，不进交付仓库）
+需求迭代.md
+答疑解惑.md
+飞书接入预研.md
+屏幕截图*.png
+*.output
